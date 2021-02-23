@@ -10,4 +10,4 @@ clean:
 	rm slurm-*
 
 test:
-	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s python test.py -- --dataroot datasets/corals2nice_corals/testA --name c2c_run2 --model test --no_dropout
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/corals2nice_corals/testA --name c2c_run2 --model test --no_dropout

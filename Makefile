@@ -9,5 +9,5 @@ cpu:
 clean:
 	rm slurm-*
 
-test:
+test: #change latest_net_G_A.pth to latest_net_G.pth 
 	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/corals2nice_corals/testA --name c2c_run2 --model test --no_dropout

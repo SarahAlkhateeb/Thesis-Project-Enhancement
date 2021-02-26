@@ -20,7 +20,8 @@ Do:
 - `python test.py -- --dataroot datasets/corals2coral/testA --name c2c_cyclegan --model test --no_dropout`
 
 
-
+**Note**: cyclegan scales and crops images to size 256x256. 
+ change sizes with `--load_size` and `--crop_size`
 
 
 

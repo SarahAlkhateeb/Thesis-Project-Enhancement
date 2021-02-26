@@ -1,13 +1,13 @@
-.PHONY: shannon cpu clean test
+.PHONY: train continue clean test
 
-shannon:
-	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p gpu-shannon -c 4 -s train.py -- --dataroot ./datasets/corals2nice_corals --name c2c_run2 --model cycle_gan --n_epochs 5 --n_epochs_decay 5
+train:
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s train.py -- --dataroot ./datasets/coral2coral --name c2c_cyclegan --model cycle_gan --n_epochs 50 --n_epochs_decay 50
 
-cpu:
-	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s train.py -- --dataroot ./datasets/corals2nice_corals --name c2c_run4 --model cycle_gan --continue_train --epoch_count 101
+continue:
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s train.py -- --dataroot ./datasets/coral2coral --name c2c_cyclegan --model cycle_gan --continue_train --epoch_count 101
 
 clean:
 	rm slurm-*
 
 test:
-	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/corals2nice_corals/testA --name c2c_run4 --model test --no_dropout
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/corals2coral/testA --name c2c_cyclegan --model test --no_dropout

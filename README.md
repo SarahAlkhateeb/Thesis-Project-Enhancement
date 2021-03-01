@@ -11,13 +11,13 @@ Do:
 - `conda activate pytorch-CycleGAN-and-pix2pix`
 - Create dataset folder `coral2coral` under `/dataset` with subfolders `trainA`, and `trainB`. Place bad quality images into `trainA` and good quality images into `trainB`.
 - train for 100 epochs (default 200):`python train.py --dataroot ./datasets/coral2coral --name c2c_cyclegan --model cycle_gan --n_epochs 50 --n_epochs_decay 50` 
-- continue training from checkpoints after training of 100 epochs: `python train.py -- --dataroot ./datasets/corals2coral --name c2c_cyclegan --model cycle_gan --continue_train --epoch_count 101` 
+- continue training from checkpoints after training of 100 epochs: `python train.py -- --dataroot ./datasets/coral2coral --name c2c_cyclegan --model cycle_gan --continue_train --epoch_count 101` 
 
 #### Testing
 Do:
-- Create subfolder datasets/corals2coral/testA and place test images into the folder. 
+- Create subfolder datasets/coral2coral/testA and place test images into the folder. 
 - Go to checkpoints and remove "A" from last generator checkpoint naming (to be able to run 1 side test)
-- `python test.py -- --dataroot datasets/corals2coral/testA --name c2c_cyclegan --model test --no_dropout`
+- `python test.py -- --dataroot datasets/coral2coral/testA --name c2c_cyclegan --model test --no_dropout`
 
 
 **Note**: cyclegan scales and crops images to size 256x256. 

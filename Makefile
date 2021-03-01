@@ -1,7 +1,7 @@
 .PHONY: train_cpu train_gpu continue clean test
 
-train_markov:
-	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p gpu-markov -c 8 -s train.py -- --dataroot ./datasets/coral2coral --name c2c_cyclegan_256 --model cycle_gan 
+train_gpu:
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p gpu -c 8 -s train.py -- --dataroot ./datasets/coral2coral --name c2c_cyclegan_256 --model cycle_gan 
 
 train_shannon:
 	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p gpu-shannon -c 8 -s train.py -- --dataroot ./datasets/coral2coral --name c2c_cyclegan_416 --model cycle_gan --load_size 416 --crop_size 416

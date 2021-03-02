@@ -7,10 +7,10 @@ train_shannon:
 	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p gpu-shannon -c 4 -s train.py -- --dataroot ./datasets/boc2boc_mix --name b2b_mix_cyclegan_416 --model cycle_gan --load_size 416 --crop_size 416
 
 continue_gpu:
-	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p gpu -c 4 -s train.py -- --dataroot ./datasets/coral2coral --name c2c_cyclegan_256 --model cycle_gan --continue_train --epoch_count 183
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p gpu -c 4 -s train.py -- --dataroot ./datasets/boc2boc --name b2b_cyclegan_416 --model cycle_gan --continue_train --epoch_count 101 --load_size 416 --crop_size 416
 
 continue_shannon:
-	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p gpu-shannon -c 4 -s train.py -- --dataroot ./datasets/coral2coral --name c2c_cyclegan_416 --model cycle_gan --continue_train --epoch_count 165 --load_size 416 --crop_size 416
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p gpu-shannon -c 4 -s train.py -- --dataroot ./datasets/boc2boc_mix --name b2b_mix_cyclegan_416 --model cycle_gan --continue_train --epoch_count 101 --load_size 416 --crop_size 416
 
 clean:
 	rm slurm-*

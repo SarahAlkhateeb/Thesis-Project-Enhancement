@@ -6,8 +6,11 @@ train_gpu:
 train_shannon:
 	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p gpu-shannon -c 8 -s train.py -- --dataroot ./datasets/coral2coral --name c2c_cyclegan_416 --model cycle_gan --load_size 416 --crop_size 416
 
-continue:
-	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s train.py -- --dataroot ./datasets/coral2coral --name c2c_cyclegan --model cycle_gan --continue_train --epoch_count 101
+continue_gpu:
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p gpu -c 4 -s train.py -- --dataroot ./datasets/coral2coral --name c2c_cyclegan_256 --model cycle_gan --continue_train --epoch_count 183
+
+continue_shannon:
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p gpu-shannon -c 4 -s train.py -- --dataroot ./datasets/coral2coral --name c2c_cyclegan_416 --model cycle_gan --continue_train --epoch_count 183 --load_size 416 --crop_size 416
 
 clean:
 	rm slurm-*

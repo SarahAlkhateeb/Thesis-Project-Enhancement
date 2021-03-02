@@ -1,4 +1,4 @@
-.PHONY: train_cpu train_gpu continue clean test
+.PHONY: train_cpu train_gpu continue_gpu continue_shannon clean test_256 test_416
 
 train_gpu:
 	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p gpu -c 8 -s train.py -- --dataroot ./datasets/coral2coral --name c2c_cyclegan_256 --model cycle_gan 

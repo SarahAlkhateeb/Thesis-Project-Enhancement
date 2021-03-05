@@ -19,7 +19,7 @@ clean:
 	rm slurm-*
 
 test_150:
-	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --model_suffix _A--epoch 150
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --model_suffix _A --epoch 150
 
 test_170:
 	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --model_suffix _A --epoch 170

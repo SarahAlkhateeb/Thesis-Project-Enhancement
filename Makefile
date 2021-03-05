@@ -19,16 +19,16 @@ clean:
 	rm slurm-*
 
 test_150:
-	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --suffix A --epoch 150
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --model_suffix _A--epoch 150
 
 test_170:
-	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --suffix A --epoch 170
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --model_suffix _A --epoch 170
 
 test_190:
-	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --suffix A --epoch 190
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --model_suffix _A --epoch 190
 
 test_100:
-	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --suffix A --epoch 100
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --model_suffix _A --epoch 100
 
 
 test_bocB:

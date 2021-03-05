@@ -1,4 +1,4 @@
-.PHONY: train_shannon train_gpu train_mix continue_gpu continue_shannon clean test_bocA test_bocB test_boc_mix
+.PHONY: train_shannon train_gpu train_mix continue_gpu continue_shannon clean test_150 test_170 test_100 test_190 test_bocB test_boc_mix
 
 train_gpu:
 	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p gpu -c 4 -s train.py -- --dataroot ./datasets/bolo2imagenet_320 --name bolo2imagenet_320 --model cycle_gan --load_size 320 --crop_size 320 
@@ -18,8 +18,18 @@ continue_shannon:
 clean:
 	rm slurm-*
 
-test_boc:
-	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409
+test_150:
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --suffix A --epoch 150
+
+test_170:
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --suffix A --epoch 170
+
+test_190:
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --suffix A --epoch 190
+
+test_100:
+	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/bolo2imagenet_320/testA --name bolo2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409 --suffix A --epoch 100
+
 
 test_bocB:
 	bash /opt/local/bin/run_py_job.sh -e pytorch-CycleGAN-and-pix2pix -p cpu -c 4 -s test.py -- --dataroot datasets/boloB2imagenet_320/testA --name boloB2imagenet_320 --model test --no_dropout --load_size 320 --crop_size 320 --num_test 409
